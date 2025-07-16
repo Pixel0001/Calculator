@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("./math2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#calculator{
+    border: 1px solid #000;
+    width: 700px;
+    height: 600px;
+    background-color: #818181;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-image: url("./math.jpg");
+}
+td{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #000;
+    width: 100px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-size: 3rem;
+}
+td:hover{
+    background-color: #e4e4e4;
+}
+#rezultat{
+    width: 700px;
+    height: 120px;
+    text-align: right;
+    font-size: 24px;
+    padding: 10px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    background-color: #9ffc9f;
+    border-radius: 10px;
+    background-image: url("./math3.avif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+@media (max-width: 800px) {
+    #calculator{
+        width: 300px;
+        height: 200px;
+        font-size: 24px;
+    }
+    td{
+        font-size: 24px;
+    }
+    #rezultat{
+        font-size: 2rem;
+        width: 300px;
+        height: 60px;
+    }
+}
+@media (max-height: 800px) {
+    #calculator{
+        width: 300px;
+        height: 200px;
+        font-size: 24px;
+    }
+    td{
+        font-size: 24px;
+    }
+    #rezultat{
+        font-size: 2rem;
+        width: 300px;
+        height: 60px;
+    }
+}
