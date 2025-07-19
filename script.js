@@ -2,18 +2,14 @@ const tabel = document.getElementById("calculator");
 const rezultat = document.getElementById("rezultat");
 
 let count = 0;
-let semne = ["+", "-", "*", "/", ".", "%"];
+let semne = ["+", "-", "*", "/", ".", "%", "//"];
 tabel.addEventListener("click", function(e) {
     const obiect = e.target.textContent;
     let ultimul = rezultat.textContent.slice(-1);
-
-    // Dacă obiectul este semn și ultimul caracter este semn
     if (semne.includes(obiect) && semne.includes(ultimul)) {
         if (obiect !== ultimul) {
-            // Înlocuiește semnul vechi cu cel nou
             rezultat.textContent = rezultat.textContent.slice(0, -1) + obiect;
         }
-        // Dacă obiectul e identic cu ultimul, nu face nimic (previne duplicate)
         return;
     }
     if (obiect === "=") {
@@ -31,7 +27,14 @@ tabel.addEventListener("click", function(e) {
     if (obiect !== "C" && obiect !== "=" && e.target.id !== "radical" && e.target.id !== "backspace"&& e.target.id !== "pow") {
         rezultat.textContent += obiect;    
     }
-    if(e.target.id === "pow"){
-        rezultat.textContent = Math.pow(rezultat.textContent, 2);
+    if (e.target.id === "pow") {
+        if (rezultat.textContent && !semne.includes(ultimul)) {
+            rezultat.textContent = Math.pow(valoare, 2);
+        }
+        else{
+            rezultat.textContent = rezultat.textContent.slice(0, -1);
+            let valoare = eval(rezultat.textContent);
+            rezultat.textContent = Math.pow(valoare, 2);
+        };
     }
 })
